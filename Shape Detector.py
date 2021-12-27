@@ -17,9 +17,8 @@ contours, _ = cv2.findContours(
 
 i = 0
 
-# Storing toring names of shapes
+# Storing
 for contour in contours:
-
 	# Ignore first count as function detects entire image 
 	if i == 0:
 		i = 1
@@ -37,8 +36,8 @@ for contour in contours:
 		x = int(M['m10']/M['m00'])
 		y = int(M['m01']/M['m00'])
 
-	# Inserting name at center
-	if len(approx) == 3:
+	# Inserting name at center x,y of each detected contoured shape
+	if len(approx) == 3: 
 		cv2.putText(img, 'Triangle', (x, y),
 					cv2.FONT_HERSHEY_SIMPLEX, 0.6, (255, 255, 255), 2)
 
